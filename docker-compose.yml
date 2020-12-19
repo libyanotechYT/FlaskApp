@@ -1,0 +1,15 @@
+version: '3'
+services:
+  testapp_nginx:
+    image: nginx:latest
+    container_name: testapp_nginx_proxy
+    depends_on: 
+      - testapp
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - '443:443'
+  testapp:
+    build: .
+    container_name: testapp
+    command: python main.py

@@ -348,3 +348,13 @@ MigrationBackup/
 
 # Ionide (cross platform F# VS Code tools) working folder
 .ionide/
+
+
+/.vs
+.vscode/
+
+__pycache__/
+testapp/__pycache__/
+testapp/static/assets/vmdata/
+flask_session/
+testapp/models/__pycache__/
