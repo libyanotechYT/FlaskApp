@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint
+from flask import render_template, Blueprint, jsonify
 
 
 TestIndex = Blueprint('TestIndex', __name__, template_folder='templates')
@@ -12,3 +12,8 @@ def index(path):
         return render_template('layouts/default.html', content=render_template('index.html'))
     except:
         return render_template('layouts/other-default.html', content=render_template('404.html'))
+
+
+@TestIndex.route('/testing')
+def testing():
+    return jsonify({"message": 'Testing!!! Hello :)'})
